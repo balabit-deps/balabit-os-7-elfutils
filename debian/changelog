@@ -1,3 +1,48 @@
+elfutils (0.170-0.4ubuntu0.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: DoS via a crafted file
+    - debian/patches/CVE-2018-16062.patch: make sure there is enough data
+      to read full aranges header in libdw/dwarf_getaranges.c,
+      src/readelf.c.
+    - CVE-2018-16062
+  * SECURITY UPDATE: double free and application crash
+    - debian/patches/CVE-2018-16402.patch: return error if elf_compress_gnu
+      is used on SHF_COMPRESSED section in libelf/elf_compress_gnu.c,
+      libelf/libelf.h.
+    - CVE-2018-16402
+  * SECURITY UPDATE: incorrect end of the attributes list check
+    - debian/patches/CVE-2018-16403.patch: check end of attributes list
+      consistently in libdw/dwarf_getabbrev.c, libdw/dwarf_hasattr.c.
+    - CVE-2018-16403
+  * SECURITY UPDATE: invalid memory address dereference
+    - debian/patches/CVE-2018-18310.patch: sanity check partial core file
+      data reads in libdwfl/dwfl_segment_report_module.c.
+    - CVE-2018-18310
+  * SECURITY UPDATE: invalid memory address dereference
+    - debian/patches/CVE-2018-18520.patch: handle recursive ELF ar files in
+      src/size.c.
+    - CVE-2018-18520
+  * SECURITY UPDATE: divide by zero vulnerabilties
+    - debian/patches/CVE-2018-18521.patch: check that sh_entsize isn't zero
+      in src/arlib.c.
+    - CVE-2018-18521
+  * SECURITY UPDATE: heap-based buffer over-read
+    - debian/patches/CVE-2019-7149.patch: check terminating NUL byte in
+      dwarf_getsrclines for dir/file table in libdw/dwarf_getsrclines.c,
+      src/readelf.c.
+    - CVE-2019-7149
+  * SECURITY UPDATE: incorrect truncated dyn data read handling
+    - debian/patches/CVE-2019-7150.patch: sanity check partial core file
+      dyn data read in libdwfl/dwfl_segment_report_module.c.
+    - CVE-2019-7150
+  * SECURITY UPDATE: heap-based buffer over-read
+    - debian/patches/CVE-2019-7665.patch: check NT_PLATFORM core notes
+      contain a zero terminated string in libdwfl/linux-core-attach.c,
+      libebl/eblcorenote.c, libebl/libebl.h, src/readelf.c.
+    - CVE-2019-7665
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 07 Jun 2019 11:31:15 -0400
+
 elfutils (0.170-0.4) unstable; urgency=medium
 
   * Non-maintainer upload.

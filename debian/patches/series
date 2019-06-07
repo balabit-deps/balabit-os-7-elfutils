@@ -13,3 +13,12 @@ fix-gcc7-ftbfs.diff
 disable_werror.patch
 GNU_variable_value.patch
 locviews.patch
+CVE-2018-16062.patch
+CVE-2018-16402.patch
+CVE-2018-16403.patch
+CVE-2018-18310.patch
+CVE-2018-18520.patch
+CVE-2018-18521.patch
+CVE-2019-7149.patch
+CVE-2019-7150.patch
+CVE-2019-7665.patch
